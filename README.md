@@ -12,7 +12,7 @@
 
 <br>
 
-<img src="img/lenda435/jpg" alt="Antena LENDA-435 em ambiente de campo" width="800" style="border-radius: 12px;">
+<img src="https://lenda-435.github.io/img/lenda435.jpg" alt="Antena LENDA-435 em ambiente de campo" width="800" style="border-radius: 12px;">
 
 <br><br>
 
@@ -54,10 +54,10 @@ A **LENDA-435** soluciona esses problemas adotando a arquitetura de **monopolo c
 | :--- | :--- |
 | **Tipo de Antena** | Monopolo Coaxial Tático UHF |
 | **Faixa Operacional Calibrada** | 430.000 MHz a 440.000 MHz |
-| **Frequência de Ressonância Central** | 436.000 MHz |
-| **ROE / SWR Típico** | **1.37** em 436 MHz (1.36 a 1.46 em toda a faixa 430–440 MHz) |
-| **Impedância Característica ($Z$)** | $50\ \Omega$ nominal ($43.9\ \Omega + j13.6\ \Omega$ no vale) |
-| **Perda de Retorno (Return Loss)** | **16.1 dB** a 16.3 dB |
+| **Frequência de Ressonância Central** | 435.000 MHz |
+| **ROE / SWR Típico** | **1.37** em 435 MHz (1.36 a 1.46 em toda a faixa 430–440 MHz) |
+| **Impedância Característica ($Z$)** | $50\ \Omega$ nominal ($44.3\ \Omega + j13.6\ \Omega$ no vale) |
+| **Perda de Retorno (Return Loss)** | **15.9 dB** a 16.3 dB |
 | **Perda por Descasamento (Mismatch Loss)** | **0,1 dB** (transferência de ~98% da potência de RF) |
 | **Comprimento Físico Total** | $\approx 265\text{ mm}$ a $270\text{ mm}$ (da base do conector à ponta) |
 | **Diâmetro Estrutural Máximo** | $11\text{ mm}$ |
@@ -113,8 +113,8 @@ Todas as unidades passam por varredura de calibração vetorial entre **420.000 
 | **430.400 MHz** | 1.47 | 14.5 dB | 0.2 dB | $44.8\ \Omega + j17.4\ \Omega$ | $48.0\ \Omega$ | $96.1^\circ$ |
 | **432.000 MHz** | 1.43 | 15.0 dB | 0.1 dB | $44.9\ \Omega + j16.2\ \Omega$ | $47.7\ \Omega$ | $97.8^\circ$ |
 | **434.000 MHz** | 1.40 | 15.6 dB | 0.1 dB | $44.6\ \Omega + j14.9\ \Omega$ | $47.0\ \Omega$ | $101.2^\circ$ |
-| **435.200 MHz** | 1.38 | 15.9 dB | 0.1 dB | $44.3\ \Omega + j14.1\ \Omega$ | $46.4\ \Omega$ | $103.7^\circ$ |
-| **436.000 MHz** 🎯 | **1.37** | **16.1 dB** | **0.1 dB** | **$43.9\ \Omega + j13.6\ \Omega$** | **$46.0\ \Omega$** | **$105.9^\circ$** |
+| **435.200 MHz** 🎯 | **1.37** | **16.1 dB** | **0.1 dB** | **$43.9\ \Omega + j13.6\ \Omega$** | **$46.0\ \Omega$** | **$105.9^\circ$** |
+| **436.000 MHz** | 1.38 | 15.9 dB | 0.1 dB | $44.3\ \Omega + j14.1\ \Omega$ | $46.4\ \Omega$ | $103.7^\circ$ |
 | **437.200 MHz** | 1.38 | 16.3 dB | 0.1 dB | $43.4\ \Omega + j12.9\ \Omega$ | $45.3\ \Omega$ | $109.2^\circ$ |
 | **438.400 MHz** | 1.36 | 16.3 dB | 0.1 dB | $42.7\ \Omega + j12.4\ \Omega$ | $44.5\ \Omega$ | $112.6^\circ$ |
 | **440.000 MHz** | 1.37 | 16.1 dB | 0.1 dB | $41.8\ \Omega + j11.8\ \Omega$ | $43.5\ \Omega$ | $117.3^\circ$ |
@@ -137,11 +137,11 @@ Todas as unidades passam por varredura de calibração vetorial entre **420.000 
 
 ## 📐 Dimensões de Corte e Montagem
 
-1. **Corte Inicial do Cabo:** Cortar o segmento de RG-213 no comprimento total de espera (~275 a 280 mm a partir da base do conector soldado).
+1. **Corte Inicial do Cabo:** Cortar o segmento de RG-213 no comprimento total de espera (~265 a 270 mm a partir da base do conector soldado).
 2. **Base de Travamento:** Preservar os primeiros **30 mm** do cabo com capa preta intacta a partir do conector.
 3. **Seção da Luva Coaxial (160 mm):** Decapar a capa externa de PVC mantendo a malha de cobre trançada exposta e esticada linearmente por 160 mm (contados a partir da base do conector).
-4. **Elemento Ativo Superior (~112 mm):** Remover a malha externa a partir dos 160 mm, expondo apenas o dielétrico de polietileno sólido com a alma de cobre interna.
-5. **Ajuste Fino de Bancada (Espera Capacitiva):** Cortar o condutor ativo em passos de 1 mm acompanhando o VNA até que a ressonância atinja 436.5–437.2 MHz. A colocação final do *cap* de vinil e do termorretrátil puxará a capacitância distribuída, cravando o centro em **436.000 MHz** com ROE de **1.37**.
+4. **Elemento Ativo Superior (~120 mm):** Remover a malha externa a partir dos 160 mm, expondo apenas o dielétrico de polietileno sólido com a alma de cobre interna.
+5. **Ajuste Fino de Bancada (Espera Capacitiva):** Cortar o condutor ativo em passos de 1 mm acompanhando o VNA até que a ressonância atinja 435.2–437.2 MHz. A colocação final do *cap* de vinil e do termorretrátil puxará a capacitância distribuída, cravando o centro em **435.000 MHz** com ROE de **1.37**.
 
 ---
 
