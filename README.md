@@ -165,7 +165,7 @@ A faixa de **430 a 440 MHz** no Brasil é atribuída ao **Serviço de Radioamado
 ## 🌐 Site Oficial e Contato
 
 * **Landing Page:** [lenda-435.github.io](https://lenda-435.github.io/)
-* **Projeto & Repositório:** [github.com/lenda-435/lenda-435.github.io](https://github.com/lenda-435/lenda-435.github.io)
+* **Projeto:** Henry M Jr - LGND 196.592
 * **Atendimento e Pedidos:** Via WhatsApp através do botão oficial disponível na landing page.
 
 ---
