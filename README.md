@@ -12,7 +12,7 @@
 
 <br>
 
-<img src="https://lenda-435.github.io/img/lenda435.jpg" alt="Antena LENDA-435 em ambiente de campo" width="800" style="border-radius: 12px;">
+<img src="/lenda-435/img/lenda435.jpg" alt="Antena LENDA-435 em ambiente de campo" width="800" style="border-radius: 12px;">
 
 <br><br>
 
