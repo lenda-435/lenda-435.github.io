@@ -490,7 +490,7 @@ footer{
     <div class="hero-tag">
       <span></span> Calibrada individualmente em NanoVNA-F
     </div>
-    <h1>Monopolo Coaxial. <b>Feita para a trilha.</b></h1>
+    <h1>Monopolo Coaxial.<br><b>Feita para a trilha.</b></h1>
     <p>Antena tática de alto rendimento para rádio HT, construída em cabo coaxial RG-213 de especificação militar com alma de 7 vias e equalizada em bancada para a faixa de <strong>430 a 440 MHz</strong>.</p>
     <div class="cta">
       <a class="btn" href="#comprar">Garantir a Minha</a>
@@ -668,16 +668,16 @@ footer{
         <text x="175" y="156" fill="#9da5b4" font-size="11">Alma de cobre 7 vias + polietileno</text>
 
         <text x="175" y="233" font-weight="700" fill="#ff4d00">Transição Feedpoint</text>
-        <text x="175" y="247" fill="#9da5b4" font-size="11">Sem PU40 no degrau (área limpa)</text>
+        <text x="175" y="247" fill="#9da5b4" font-size="11">Sem degrau (área limpa)</text>
 
         <text x="175" y="337" font-weight="700">Malha Coaxial (160 mm)</text>
-        <text x="175" y="351" fill="#9da5b4" font-size="11">Desacoplamento direto (sem inversão)</text>
+        <text x="175" y="351" fill="#9da5b4" font-size="11">Desacoplamento direto</text>
 
-        <text x="175" y="462" font-weight="700">Base Livre (30 mm)</text>
+        <text x="175" y="462" font-weight="700">Base Livre</text>
         <text x="175" y="476" fill="#9da5b4" font-size="11">Alívio mecânico e isolamento</text>
 
         <text x="175" y="499" font-weight="700">Conector SMA Fêmea</text>
-        <text x="175" y="513" fill="#9da5b4" font-size="11">Rosca externa / receptor para HT</text>
+        <text x="175" y="513" fill="#9da5b4" font-size="11">Rosca externa / perfeito para Baofeng</text>
       </g>
     </svg>
   </div>
@@ -710,7 +710,7 @@ footer{
   <div class="section-head">
     <span class="section-tag">Comprovação Científica</span>
     <h2>Aferição em Analisador Vetorial de Rede</h2>
-    <p style="color:var(--muted);max-width:48ch;margin-top:.5rem">Nenhuma unidade sai da bancada sem o laudo de varredura no VNAmate. A curva real demonstra estabilidade plena de 430 a 440 MHz com ponto ótimo cravado em 436 MHz.</p>
+    <p style="color:var(--muted);max-width:48ch;margin-top:.5rem">Nenhuma unidade sai da bancada sem o laudo de varredura no VNAmate. A curva real demonstra estabilidade plena de 430 a 440 MHz com ponto ótimo cravado em 435 MHz (média).</p>
   </div>
 
   <div class="vna-container">
@@ -764,14 +764,14 @@ footer{
             <!-- Curva Real de ROE / SWR (Vermelha) -->
             <path d="M40 70 Q90 100 155 130 T235 152 Q330 155 420 100 T500 50" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
 
-            <!-- Ponto Marker Central em 436.000 MHz -->
+            <!-- Ponto Marker Central em 435.000 MHz -->
             <circle cx="235" cy="152" r="5" fill="#38bdf8" stroke="#fff" stroke-width="1.5"/>
             <line x1="235" y1="20" x2="235" y2="210" stroke="#38bdf8" stroke-width="1" stroke-dasharray="2,2"/>
-            <text x="242" y="145" fill="#38bdf8" font-size="11" font-family="monospace" font-weight="700">M1: 436 MHz (1.37)</text>
+            <text x="242" y="145" fill="#38bdf8" font-size="11" font-family="monospace" font-weight="700">M1: 435 MHz (1.37)</text>
 
             <!-- Marcador Inicial 420 MHz e Final 460 MHz -->
             <text x="40" y="218" fill="#8b949e" font-size="9" font-family="monospace">420.0 MHz</text>
-            <text x="235" y="218" fill="#38bdf8" font-size="9" font-family="monospace" text-anchor="middle">436.0 MHz</text>
+            <text x="235" y="218" fill="#38bdf8" font-size="9" font-family="monospace" text-anchor="middle">435.0 MHz</text>
             <text x="500" y="218" fill="#8b949e" font-size="9" font-family="monospace" text-anchor="end">460.0 MHz</text>
           </svg>
         </div>
@@ -784,7 +784,7 @@ footer{
               <b>Marker 1</b>
               <span class="marker-highlight">Auto Center</span>
             </div>
-            <div>Freq: <b>436.000 MHz</b></div>
+            <div>Freq: <b>435.000 MHz</b></div>
             <div>Z: <b>43.9 Ω + 13.6 j</b> (|Z|: 46.0 Ω)</div>
             <div>Return Loss: <b style="color:var(--green)">16.1 dB</b></div>
             <div>Mismatch: <b>0.1 dB</b></div>
@@ -854,22 +854,22 @@ footer{
               <td>47.0 Ω</td>
               <td>101.2°</td>
             </tr>
-            <tr>
+            <tr class="active">
               <td>435.200 MHz</td>
-              <td>1.38</td>
+              <td>1.37</td>
               <td>15.9 dB</td>
               <td>0.1 dB</td>
-              <td>44.3 Ω +14.1 j</td>
+              <td>44.3 Ω +13.6 j</td>
               <td>46.4 Ω</td>
               <td>103.7°</td>
             </tr>
             <!-- Linha Ativa Destacada do Centro de Ressonância -->
-            <tr class="active">
+            <tr>
               <td>▶ 436.000 MHz</td>
               <td>1.37</td>
               <td>16.1 dB</td>
               <td>0.1 dB</td>
-              <td>43.9 Ω +13.6 j</td>
+              <td>43.9 Ω +14.1 j</td>
               <td>46.0 Ω</td>
               <td>105.9°</td>
             </tr>
@@ -919,14 +919,14 @@ footer{
   <div class="stats">
     <div class="stat-card">
       <b>1.37</b>
-      <span>ROE central em 436 MHz, mantendo 1.36 a 1.46 em toda a faixa de 430 a 440 MHz</span>
+      <span>ROE central em 435 MHz, mantendo 1.36 a 1.46 em toda a faixa de 430 a 440 MHz</span>
     </div>
     <div class="stat-card">
       <b>0,1 dB</b>
       <span>Perda por descasamento desprezível: 98% da potência do HT convertida em onda útil</span>
     </div>
     <div class="stat-card">
-      <b>16,1 dB</b>
+      <b>15,9 dB</b>
       <span>Perda de retorno (Return Loss) assegurada, garantindo proteção ao estágio final do transceptor</span>
     </div>
     <div class="stat-card">
@@ -966,7 +966,7 @@ footer{
       </tr>
       <tr>
         <th>ROE / SWR Médio</th>
-        <td>1.37 a 1.46 (1.37 em 436 MHz)</td>
+        <td>1.37 a 1.46 (1.37 em 435 MHz)</td>
       </tr>
       <tr>
         <th>Impedância Nominal</th>
@@ -990,7 +990,7 @@ footer{
       </tr>
       <tr>
         <th>Conector Base</th>
-        <td>SMA Fêmea (encaixe direto UV-5R/UV-21 Pro)</td>
+        <td>SMA Fêmea (encaixe direto para Baofeng)</td>
       </tr>
       <tr>
         <th>Construção</th>
@@ -1012,7 +1012,7 @@ footer{
       <h2>Garanta a sua LENDA-435</h2>
     </div>
     <p style="max-width:54ch;color:var(--muted);font-size:1.1rem;margin-bottom:2rem">
-      Cada antena é confeccionada e equalizada individualmente no analisador vetorial de rede antes do envio. O conector padrão é <strong>SMA Fêmea</strong>, proporcionando encaixe rosqueado direto para Baofeng UV-5R, UV-21 Pro, Quansheng e transceptores portáteis compatíveis, dispensando adaptadores que geram perdas.
+      Cada antena é confeccionada e equalizada individualmente no analisador vetorial de rede antes do envio. O conector padrão é <strong>SMA Fêmea</strong>, proporcionando encaixe rosqueado direto para Baofeng e transceptores portáteis compatíveis, dispensando adaptadores que geram perdas.
     </p>
 
     <a class="btn" href="https://wa.me/5598900000000?text=Ol%C3%A1%2C%20gostaria%20de%20encomendar%20uma%20antena%20LENDA-435" target="_blank" rel="noopener">
