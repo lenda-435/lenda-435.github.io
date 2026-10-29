@@ -6,7 +6,7 @@
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Online-10b981?style=for-the-badge&logo=github)](https://lenda-435.github.io/)
 [![Faixa](https://img.shields.io/badge/Faixa-430_a_440_MHz-ff4d00?style=for-the-badge)](https://lenda-435.github.io/)
-[![ROE / SWR](https://img.shields.io/badge/ROE-1.37_%40_435_MHz-38bdf8?style=for-the-badge)](https://lenda-435.github.io/)
+[![ROE / SWR](https://img.shields.io/static/v1?label=ROE&message=1.37%20@%20435%20MHz&color=38bdf8&style=for-the-badge)](https://lenda-435.github.io/)
 [![Impedância](https://img.shields.io/badge/Impedância-50_Ω-f59e0b?style=for-the-badge)](https://lenda-435.github.io/)
 [![Conector](https://img.shields.io/badge/Conector-SMA_Fêmea-64748b?style=for-the-badge)](https://lenda-435.github.io/)
 
