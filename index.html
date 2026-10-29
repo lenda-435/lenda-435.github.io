@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LENDA-435 · Monopolo Coaxial Tático UHF Calibrado em Bancada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,700;1,800;1,900&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+:root{
+  --bg:#090a0c;
+  --surface:#13151a;
+  --surface-subtle:#1a1d24;
+  --line:#262a34;
+  --line-strong:#3b4150;
+  --text:#f5f4f0;
+  --muted:#9da5b4;
+  --accent:#ff4d00;
+  --accent-hover:#ff6524;
+  --accent-glow:rgba(255,77,0,0.18);
+  --green:#10b981;
+  --blue:#38bdf8;
+  color-scheme:dark;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px)
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font:400 1.05rem/1.6 Archivo,system-ui,sans-serif;
+  letter-spacing:-0.01em;
+  overflow-x:hidden;
+}
+h1,h2,h3{
+  font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+  font-style:italic;
+  font-weight:900;
+  line-height:.95;
+  margin:0;
+  letter-spacing:.01em;
+  text-transform:uppercase;
+}
+.mono{font-family:'JetBrains Mono',monospace}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 1.5rem}
+
+/* Header */
+.top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:1.25rem 1.5rem;
+  max-width:1140px;
+  margin:0 auto;
+}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.brand-badge{
+  background:linear-gradient(135deg,var(--accent),#cc3b00);
+  color:#fff;
+  font-weight:800;
+  font-size:.9rem;
+  padding:.35rem .6rem;
+  border-radius:4px;
+  letter-spacing:.05em;
+  font-family:'JetBrains Mono',monospace;
+}
+.brand-name{
+  font-size:1.6rem;
+  font-family:"Barlow Condensed",sans-serif;
+  font-style:italic;
+  font-weight:900;
+  letter-spacing:.02em;
+}
+
+/* Buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--accent);
+  color:#fff;
+  font-weight:700;
+  font-size:1rem;
+  text-decoration:none;
+  padding:.85rem 1.6rem;
+  border-radius:6px;
+  border:1px solid transparent;
+  transition:all .15s ease;
+  box-shadow:0 4px 18px var(--accent-glow);
+}
+.btn:hover{background:var(--accent-hover);transform:translateY(-1px);filter:brightness(1.05)}
+.btn.ghost{
+  background:transparent;
+  color:var(--text);
+  border:1px solid var(--line-strong);
+  box-shadow:none;
+}
+.btn.ghost:hover{
+  background:var(--surface);
+  border-color:var(--muted);
+}
+
+/* Hero Section */
+.hero{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:3rem;
+  align-items:center;
+  max-width:1140px;
+  margin:0 auto;
+  padding:2rem 1.5rem 4.5rem;
+}
+.hero-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  background:var(--surface);
+  border:1px solid var(--line-strong);
+  padding:.35rem .75rem;
+  border-radius:999px;
+  font-size:.85rem;
+  color:var(--muted);
+  margin-bottom:1.25rem;
+}
+.hero-tag span{
+  display:inline-block;
+  width:8px;
+  height:8px;
+  background:var(--green);
+  border-radius:50%;
+  box-shadow:0 0 8px var(--green);
+}
+.hero h1{font-size:clamp(3.5rem,8.5vw,6.5rem);margin-bottom:.5rem}
+.hero h1 b{color:var(--accent);font-weight:900}
+.hero p{
+  max-width:34rem;
+  color:var(--muted);
+  font-size:1.15rem;
+  margin:1.25rem 0 2rem;
+  line-height:1.6;
+}
+.cta{display:flex;gap:1rem;flex-wrap:wrap}
+
+/* Visual Showcase */
+.showcase-box{
+  background:linear-gradient(180deg,var(--surface) 0%,#0c0d11 100%);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:2rem 1.5rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  position:relative;
+  box-shadow:0 20px 40px rgba(0,0,0,0.5);
+  overflow:hidden;
+}
+.showcase-box::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 50% 20%,rgba(255,77,0,0.12) 0%,transparent 60%);
+  pointer-events:none;
+}
+.antenna-visual{
+  position:relative;
+  width:100%;
+  max-width:280px;
+  height:440px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.specs-pills{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.75rem;
+  width:100%;
+  margin-top:1.5rem;
+}
+.pill{
+  background:var(--surface-subtle);
+  border:1px solid var(--line);
+  padding:.75rem 1rem;
+  border-radius:6px;
+  text-align:center;
+}
+.pill .label{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;display:block}
+.pill .val{font-size:1.35rem;font-weight:800;color:var(--text);font-family:"Barlow Condensed",sans-serif;margin-top:.15rem}
+
+/* Common Section */
+section{padding:5rem 0;border-top:1px solid var(--line)}
+.section-head{margin-bottom:2.75rem}
+.section-tag{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.85rem;
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  margin-bottom:.5rem;
+  display:block;
+}
+h2{font-size:clamp(2.4rem,5.5vw,3.8rem);margin-bottom:.5rem}
+
+/* Pains */
+.pains{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.pains-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-left:4px solid var(--accent);
+  padding:2rem 1.5rem;
+  border-radius:0 8px 8px 0;
+  transition:border-color .2s;
+}
+.pains-card:hover{border-color:var(--line-strong);border-left-color:var(--accent)}
+.pains-card h3{font-size:1.75rem;margin-bottom:.75rem;color:var(--text)}
+.pains-card p{margin:0;color:var(--muted);font-size:1rem;line-height:1.6}
+
+/* Anatomy Section */
+.anat{
+  display:grid;
+  grid-template-columns:360px 1fr;
+  gap:3.5rem;
+  align-items:center;
+}
+.anat-graphic{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:2rem 1.5rem;
+  display:flex;
+  justify-content:center;
+}
+.anat-graphic svg{width:100%;max-width:320px;height:auto;overflow:visible}
+.layers{display:grid;gap:1.75rem}
+.layer-item{
+  background:var(--surface);
+  border:1px solid var(--line);
+  padding:1.5rem 1.75rem;
+  border-radius:8px;
+  border-left:3px solid var(--accent);
+}
+.layer-item h3{font-size:1.7rem;margin-bottom:.4rem;color:var(--text)}
+.layer-item p{margin:0;color:var(--muted);font-size:1.02rem;line-height:1.6}
+
+/* VNAmate Benchmark */
+.vna-container{
+  background:#0d1117;
+  border:1px solid #30363d;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 20px 45px rgba(0,0,0,0.6);
+}
+.vna-window-bar{
+  background:#161b22;
+  border-bottom:1px solid #30363d;
+  padding:.65rem 1rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.window-dots{display:flex;gap:.45rem}
+.dot{width:11px;height:11px;border-radius:50%}
+.dot-red{background:#ff5f56}
+.dot-yellow{background:#ffbd2e}
+.dot-green{background:#27c93f}
+.window-title{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.85rem;
+  color:#8b949e;
+}
+.vna-body{padding:1.5rem}
+
+/* VNA Layout Inside */
+.vna-grid{
+  display:grid;
+  grid-template-columns:1.35fr .65fr;
+  gap:1.5rem;
+  margin-bottom:1.5rem;
+}
+.vna-swr-chart{
+  background:#090d13;
+  border:1px solid #21262d;
+  border-radius:6px;
+  padding:1rem;
+  position:relative;
+}
+.vna-smith-chart{
+  background:#090d13;
+  border:1px solid #21262d;
+  border-radius:6px;
+  padding:1rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+.marker-panel{
+  background:#161b22;
+  border:1px solid #30363d;
+  border-radius:6px;
+  padding:.85rem 1rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.85rem;
+  color:#c9d1d9;
+  line-height:1.5;
+  margin-bottom:1rem;
+}
+.marker-panel b{color:var(--text);font-weight:700}
+.marker-highlight{color:var(--accent);font-weight:700}
+.swr-meter-bar{
+  height:12px;
+  background:#21262d;
+  border-radius:3px;
+  margin-top:.4rem;
+  position:relative;
+  overflow:hidden;
+}
+.swr-meter-fill{
+  width:37%;
+  height:100%;
+  background:linear-gradient(90deg,#10b981,#34d399);
+}
+
+/* VNA Table Mockup */
+.vna-table-wrap{
+  background:#090d13;
+  border:1px solid #21262d;
+  border-radius:6px;
+  max-height:220px;
+  overflow-y:auto;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.82rem;
+}
+.vna-table{width:100%;border-collapse:collapse;text-align:left}
+.vna-table th{
+  background:#161b22;
+  color:#8b949e;
+  padding:.5rem .75rem;
+  font-weight:600;
+  border-bottom:1px solid #30363d;
+  position:sticky;
+  top:0;
+}
+.vna-table td{padding:.4rem .75rem;color:#c9d1d9;border-bottom:1px solid #161b22}
+.vna-table tr.active{background:rgba(56,189,248,0.15);color:#fff}
+.vna-table tr.active td{color:#38bdf8;font-weight:600}
+
+/* Stats Row */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.5rem;
+  margin:2.5rem 0 0;
+}
+.stat-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  padding:1.5rem 1.25rem;
+  border-radius:8px;
+  text-align:left;
+}
+.stat-card b{
+  display:block;
+  font:italic 900 2.8rem/1 "Barlow Condensed",sans-serif;
+  color:var(--accent);
+  letter-spacing:.02em;
+}
+.stat-card span{
+  color:var(--muted);
+  font-size:.95rem;
+  display:block;
+  margin-top:.45rem;
+  line-height:1.4;
+}
+
+/* Columns Section */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem}
+ul.use{padding:0;margin:0;list-style:none;display:grid;gap:1.25rem}
+ul.use li{
+  padding-left:1.5rem;
+  border-left:3px solid var(--accent);
+  color:var(--text);
+  font-size:1.05rem;
+  line-height:1.5;
+}
+ul.use li b{color:#fff}
+
+/* Specs Table */
+table.spec-table{width:100%;border-collapse:collapse}
+table.spec-table th,table.spec-table td{
+  text-align:left;
+  padding:1rem .75rem;
+  border-bottom:1px solid var(--line);
+  vertical-align:middle;
+  font-size:1rem;
+}
+table.spec-table th{
+  font-weight:600;
+  color:var(--muted);
+  width:40%;
+}
+table.spec-table td{
+  color:var(--text);
+  font-family:'JetBrains Mono',monospace;
+  font-size:.95rem;
+}
+
+/* Buy & Legal */
+.buy-card{
+  background:linear-gradient(180deg,var(--surface) 0%,#0f1116 100%);
+  border:1px solid var(--line-strong);
+  border-radius:12px;
+  padding:3.5rem 2.5rem;
+  box-shadow:0 25px 50px rgba(0,0,0,0.5);
+  position:relative;
+}
+.buy-card::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  background:linear-gradient(90deg,var(--accent),#ff8533);
+}
+.legal-box{
+  margin-top:2.5rem;
+  padding-top:2rem;
+  border-top:1px solid var(--line);
+  display:grid;
+  gap:1rem;
+}
+.legal{font-size:.9rem;color:var(--muted);line-height:1.6}
+
+/* Footer */
+footer{
+  padding:3rem 0;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:.92rem;
+  text-align:center;
+}
+
+/* Responsive Breakpoints */
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;padding-bottom:3rem}
+  .hero .showcase-box{order:-1;max-width:440px;margin:0 auto}
+  .anat{grid-template-columns:1fr}
+  .vna-grid{grid-template-columns:1fr}
+  .pains{grid-template-columns:1fr}
+  .cols{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:540px){
+  .stats{grid-template-columns:1fr}
+  .buy-card{padding:2rem 1.5rem}
+  .specs-pills{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- Header Principal -->
+<header class="top">
+  <a href="#" class="brand">
+    <span class="brand-badge">UHF 50Ω</span>
+    <span class="brand-name">LENDA-435</span>
+  </a>
+  <a class="btn ghost" href="#comprar">Pedir Antena</a>
+</header>
+
+<main>
+<!-- Seção Hero -->
+<section class="hero" style="border-top:none;padding-top:1rem">
+  <div class="copy">
+    <div class="hero-tag">
+      <span></span> Calibrada individualmente em NanoVNA-F
+    </div>
+    <h1>Monopolo Coaxial. <b>Feita para a trilha.</b></h1>
+    <p>Antena tática de alto rendimento para rádio HT, construída em cabo coaxial RG-213 de especificação militar com alma de 7 vias e equalizada em bancada para a faixa de <strong>430 a 440 MHz</strong> (ROE 1.37).</p>
+    <div class="cta">
+      <a class="btn" href="#comprar">Garantir a Minha</a>
+      <a class="btn ghost" href="#como-e-feita">Ver Corte Técnico</a>
+    </div>
+  </div>
+
+  <div class="showcase-box">
+    <div class="antenna-visual">
+      <!-- Ilustração SVG em Alta Definição da Antena LENDA-435 com Conector SMA Fêmea Dourado -->
+      <svg viewBox="0 0 160 440" width="160" height="440" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Glow suave de fundo -->
+        <circle cx="80" cy="180" r="100" fill="url(#ant-glow)" opacity="0.6"/>
+        
+        <!-- Ponteira Vinil Cap 8mm Laranja (Topo) -->
+        <rect x="71" y="24" width="18" height="34" rx="9" fill="#ff4d00" stroke="#d63b00" stroke-width="1.5"/>
+        <line x1="74" y1="28" x2="86" y2="28" stroke="#ffa366" stroke-width="1.5" stroke-linecap="round"/>
+
+        <!-- Haste Superior (Elemento Ativo 112mm) - Revestida com Termorretrátil 3:1 Laranja -->
+        <rect x="73.5" y="56" width="13" height="150" fill="url(#orange-tube)"/>
+        
+        <!-- Zona de Transição (Feedpoint direto, sem degrau de PU40) -->
+        <path d="M73.5 206 L86.5 206 L87.5 212 L72.5 212 Z" fill="#e04000"/>
+
+        <!-- Haste Inferior (Malha Coaxial de Desacoplamento 160mm) - Revestida com Termorretrátil 3:1 Laranja -->
+        <rect x="72" y="212" width="16" height="170" fill="url(#orange-tube)"/>
+
+        <!-- Tipografia Tática na Luva da Antena -->
+        <g transform="translate(80, 300) rotate(-90)">
+          <text text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-style="italic" font-size="12" fill="#000" letter-spacing="2">LENDA-435</text>
+        </g>
+
+        <!-- Anel de Reforço Inferior (Preto Tático 30mm) -->
+        <rect x="71" y="372" width="18" height="26" rx="2" fill="#181a1f" stroke="#2d313b" stroke-width="1"/>
+        <line x1="72" y1="384" x2="88" y2="384" stroke="#373d4a" stroke-width="1.5"/>
+
+        <!-- Conector SMA Fêmea (Rosca Externa e Pino Central/Furo Dourado em Latão Usinado) -->
+        <!-- Corpo da Rosca SMA -->
+        <rect x="73" y="398" width="14" height="24" fill="url(#brass-grad)" stroke="#966e1d" stroke-width="1"/>
+        <!-- Filetes de Rosca SMA -->
+        <line x1="72" y1="403" x2="88" y2="403" stroke="#ffd875" stroke-width="1"/>
+        <line x1="72" y1="407" x2="88" y2="407" stroke="#997020" stroke-width="1"/>
+        <line x1="72" y1="411" x2="88" y2="411" stroke="#ffd875" stroke-width="1"/>
+        <line x1="72" y1="415" x2="88" y2="415" stroke="#997020" stroke-width="1"/>
+        <line x1="72" y1="419" x2="88" y2="419" stroke="#ffd875" stroke-width="1"/>
+
+        <!-- Orifício Receptor Central SMA Fêmea (Detalhe Frontal/Fundo) -->
+        <rect x="77" y="422" width="6" height="4" rx="1" fill="#2d1c02"/>
+        <circle cx="80" cy="424" r="1.5" fill="#111"/>
+
+        <!-- Definições de Gradientes -->
+        <defs>
+          <radialGradient id="ant-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(80 180) rotate(90) scale(120)">
+            <stop stop-color="#ff4d00" stop-opacity="0.35"/>
+            <stop offset="1" stop-color="#ff4d00" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="orange-tube" x1="72" y1="0" x2="88" y2="0" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#ff6a2b"/>
+            <stop offset="0.3" stop-color="#ff4d00"/>
+            <stop offset="0.8" stop-color="#d63b00"/>
+            <stop offset="1" stop-color="#a62e00"/>
+          </linearGradient>
+          <linearGradient id="brass-grad" x1="73" y1="0" x2="87" y2="0" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#e6bc5c"/>
+            <stop offset="0.4" stop-color="#f5d687"/>
+            <stop offset="0.8" stop-color="#ba8c2f"/>
+            <stop offset="1" stop-color="#805d15"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <div class="specs-pills">
+      <div class="pill">
+        <span class="label">Comprimento</span>
+        <span class="val">~265 mm</span>
+      </div>
+      <div class="pill">
+        <span class="label">Peso Real</span>
+        <span class="val">~58 g</span>
+      </div>
+      <div class="pill">
+        <span class="label">Diâmetro</span>
+        <span class="val">11 mm</span>
+      </div>
+      <div class="pill">
+        <span class="label">Conector</span>
+        <span class="val">SMA Fêmea</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Problemas Comuns -->
+<section><div class="wrap">
+  <div class="section-head">
+    <span class="section-tag">Engenharia vs. Improviso</span>
+    <h2>Onde as antenas comuns falham em campo</h2>
+  </div>
+  <div class="pains">
+    <div class="pains-card">
+      <h3>Quebram na Flexão</h3>
+      <p>Antenas dobráveis genéricas ou cabos de alma rígida (como LMR sólido) fadigam e quebram sob movimentos repetidos, atrito na vegetação ou torção no rádio.</p>
+    </div>
+    <div class="pains-card">
+      <h3>Irradiam Pouco Sinal</h3>
+      <p>As antenas curtas de fábrica (rubber duck) possuem ganho negativo e altas perdas dielétricas. Em dunas, trilhas ou mata, a comunicação com a base falha rapidamente.</p>
+    </div>
+    <div class="pains-card">
+      <h3>Descasamento Desconhecido</h3>
+      <p>Quase nenhuma antena importada barata passa por aferição vetorial individual. A ROE elevada faz o rádio esquentar, drena bateria e dissipa RF em calor.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- Corte Técnico / Raio-X -->
+<section id="como-e-feita"><div class="wrap anat">
+  <div class="anat-graphic">
+    <!-- SVG Técnico Esquemático: Raio-X do Monopolo Coaxial (Sem malha invertida) -->
+    <svg viewBox="0 0 340 580" role="img" aria-label="Corte esquemático do monopolo coaxial LENDA-435">
+      <defs>
+        <!-- Malha de Cobre Trançada Regular (Sem inversão) -->
+        <pattern id="braid-pattern" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="10" stroke="#b46a3b" stroke-width="2"/>
+          <line x1="0" y1="0" x2="10" y2="0" stroke="#874720" stroke-width="2"/>
+        </pattern>
+        <!-- Condutor Multifilar Central de Cobre -->
+        <linearGradient id="cu-core" x1="0" y1="0" x2="1" y2="0">
+          <stop stop-color="#ff9966"/>
+          <stop offset="0.5" stop-color="#ff6622"/>
+          <stop offset="1" stop-color="#cc4400"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Linhas Guia e Cotas de Referência -->
+      <!-- Topo: Ponteira e Gota de PU40 -->
+      <rect x="85" y="24" width="30" height="42" rx="15" fill="#ff4d00" stroke="#e04000" stroke-width="2"/>
+      <path d="M92 38 Q100 28 108 38 Q100 48 92 38 Z" fill="#3b4252" opacity="0.9"/>
+
+      <!-- Elemento Irradiante Ativo (~112mm) - Dielétrico Translúcido de Polietileno com Alma de Cobre -->
+      <rect x="91" y="66" width="18" height="170" fill="#f1f5f9" opacity="0.3" stroke="#94a3b8" stroke-width="1"/>
+      <rect x="98" y="66" width="4" height="170" fill="url(#cu-core)"/>
+
+      <!-- Ponto de Transição do Feedpoint (Sem resina PU40 externa) -->
+      <line x1="80" y1="236" x2="120" y2="236" stroke="#ff4d00" stroke-width="2" stroke-dasharray="3,3"/>
+
+      <!-- Luva Inferior Coaxial de Desacoplamento (160mm) - Malha Exposta sem Inversão -->
+      <rect x="88" y="236" width="24" height="210" fill="url(#braid-pattern)" stroke="#7c3a1d" stroke-width="1.5"/>
+
+      <!-- Base com Cabo Íntegro (Capa Preta Original de PVC 30mm) -->
+      <rect x="87" y="446" width="26" height="40" fill="#1e232d" stroke="#333b4d" stroke-width="1.5"/>
+
+      <!-- Conector SMA Fêmea (Corpo Latão Rosca Externa com Furo Central) -->
+      <rect x="86" y="486" width="28" height="34" rx="2" fill="#c99e32" stroke="#876615" stroke-width="1.5"/>
+      <line x1="86" y1="494" x2="114" y2="494" stroke="#ffe58f" stroke-width="1"/>
+      <line x1="86" y1="502" x2="114" y2="502" stroke="#ffe58f" stroke-width="1"/>
+      <line x1="86" y1="510" x2="114" y2="510" stroke="#ffe58f" stroke-width="1"/>
+      <circle cx="100" cy="516" r="3" fill="#222"/>
+
+      <!-- Linhas Chamadas / Textos -->
+      <g stroke="#ff4d00" stroke-width="1" opacity="0.75" fill="none">
+        <path d="M115 44 H165"/>
+        <path d="M110 145 H165"/>
+        <path d="M120 236 H165"/>
+        <path d="M112 340 H165"/>
+        <path d="M113 465 H165"/>
+        <path d="M114 502 H165"/>
+      </g>
+
+      <g fill="#f1efec" font-family="'Archivo', sans-serif" font-size="13">
+        <text x="175" y="42" font-weight="700">Ponteira Vinil (8 mm)</text>
+        <text x="175" y="56" fill="#9da5b4" font-size="11">Vedada com gota interna de PU40</text>
+
+        <text x="175" y="142" font-weight="700">Elemento Ativo (~112 mm)</text>
+        <text x="175" y="156" fill="#9da5b4" font-size="11">Alma de cobre 7 vias + polietileno</text>
+
+        <text x="175" y="233" font-weight="700" fill="#ff4d00">Transição Feedpoint</text>
+        <text x="175" y="247" fill="#9da5b4" font-size="11">Sem PU40 no degrau (área limpa)</text>
+
+        <text x="175" y="337" font-weight="700">Malha Coaxial (160 mm)</text>
+        <text x="175" y="351" fill="#9da5b4" font-size="11">Desacoplamento direto (sem inversão)</text>
+
+        <text x="175" y="462" font-weight="700">Base Livre (30 mm)</text>
+        <text x="175" y="476" fill="#9da5b4" font-size="11">Alívio mecânico e isolamento</text>
+
+        <text x="175" y="499" font-weight="700">Conector SMA Fêmea</text>
+        <text x="175" y="513" fill="#9da5b4" font-size="11">Rosca externa / receptor para HT</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="layers">
+    <div class="section-head" style="margin-bottom:0">
+      <span class="section-tag">Monopolo Coaxial Tático</span>
+      <h2>Por dentro da engenharia</h2>
+    </div>
+
+    <div class="layer-item">
+      <h3>Alma Multifilar de Cobre (7 Vias)</h3>
+      <p>Construída a partir de cabo RG-213 de especificação militar. Ao contrário de cabos de alma rígida sólida que quebram facilmente ao flexionar, os 7 fios trançados garantem elasticidade mecânica extrema para uso tático severo.</p>
+    </div>
+
+    <div class="layer-item">
+      <h3>Desacoplamento Coaxial Sem Inversão</h3>
+      <p>A seção inferior de 160 mm utiliza a malha pesada de cobre estendida diretamente para a base, criando um desacoplamento de corrente eficiente que estabiliza o lóbulo de irradiação e elimina variações de ROE provocadas pela mão do operador.</p>
+    </div>
+
+    <div class="layer-item">
+      <h3>Termorretrátil 3:1 Vulcanizante e Estanqueidade</h3>
+      <p>A haste é blindada por tubulação termorretraível de parede dupla com adesivo interno ativado por calor. O selante PU40 fica restrito à cavidade interna da ponteira de vinil de 8 mm no topo, garantindo vedação contra chuva e maresia sem adicionar peso ou alterar a impedância no feedpoint.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- Laudo Vetorial VNAmate -->
+<section><div class="wrap">
+  <div class="section-head">
+    <span class="section-tag">Comprovação Científica</span>
+    <h2>Aferição em Analisador Vetorial de Rede</h2>
+    <p style="color:var(--muted);max-width:48ch;margin-top:.5rem">Nenhuma unidade sai da bancada sem o laudo de varredura no VNAmate. A curva real demonstra estabilidade plena de 430 a 440 MHz com ponto ótimo cravado em 436 MHz.</p>
+  </div>
+
+  <div class="vna-container">
+    <div class="vna-window-bar">
+      <div class="window-dots">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <div class="window-title">VNAmate — NanoVNA-F · Varredura 420.000 MHz a 460.000 MHz (LENDA-435)</div>
+      <div style="font-size:.78rem;color:#8b949e" class="mono">Port 1 · S11</div>
+    </div>
+
+    <div class="vna-body">
+      <div class="vna-grid">
+        <!-- Gráfico SWR / ROE Vetorial Interativo -->
+        <div class="vna-swr-chart">
+          <div style="display:flex;justify-content:space-between;font-size:.8rem;color:#8b949e" class="mono">
+            <span>SWR 1.0 — 2.0 (Div 0.1)</span>
+            <span style="color:var(--green)">Janela Útil: 430.000 — 440.000 MHz</span>
+          </div>
+
+          <!-- SVG do Gráfico de ROE com a curva em bacia profunda -->
+          <svg viewBox="0 0 520 220" width="100%" height="210" style="margin-top:.75rem">
+            <!-- Linhas de Grade Horizontais SWR -->
+            <line x1="40" y1="20" x2="500" y2="20" stroke="#21262d" stroke-width="1"/>
+            <text x="32" y="24" fill="#8b949e" font-size="10" text-anchor="end" font-family="monospace">2.0</text>
+
+            <line x1="40" y1="60" x2="500" y2="60" stroke="#21262d" stroke-width="1"/>
+            <text x="32" y="64" fill="#8b949e" font-size="10" text-anchor="end" font-family="monospace">1.8</text>
+
+            <line x1="40" y1="100" x2="500" y2="100" stroke="#21262d" stroke-width="1"/>
+            <text x="32" y="104" fill="#8b949e" font-size="10" text-anchor="end" font-family="monospace">1.6</text>
+
+            <line x1="40" y1="120" x2="500" y2="120" stroke="#10b981" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+            <text x="32" y="124" fill="#10b981" font-size="10" text-anchor="end" font-family="monospace">1.5</text>
+
+            <line x1="40" y1="140" x2="500" y2="140" stroke="#21262d" stroke-width="1"/>
+            <text x="32" y="144" fill="#8b949e" font-size="10" text-anchor="end" font-family="monospace">1.4</text>
+
+            <line x1="40" y1="180" x2="500" y2="180" stroke="#21262d" stroke-width="1"/>
+            <text x="32" y="184" fill="#8b949e" font-size="10" text-anchor="end" font-family="monospace">1.2</text>
+
+            <line x1="40" y1="210" x2="500" y2="210" stroke="#30363d" stroke-width="1"/>
+            <text x="32" y="213" fill="#8b949e" font-size="10" text-anchor="end" font-family="monospace">1.0</text>
+
+            <!-- Zona Destacada em Verde da Faixa de Amador/UHF (430 a 440 MHz) -->
+            <rect x="155" y="20" width="130" height="190" fill="#10b981" fill-opacity="0.12"/>
+            <text x="220" y="32" fill="#10b981" font-size="9" text-anchor="middle" font-family="monospace">FAIXA 430–440 MHz</text>
+
+            <!-- Curva Real de ROE / SWR (Vermelha) -->
+            <path d="M40 70 Q90 100 155 130 T235 152 Q330 155 420 100 T500 50" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
+
+            <!-- Ponto Marker Central em 436.000 MHz -->
+            <circle cx="235" cy="152" r="5" fill="#38bdf8" stroke="#fff" stroke-width="1.5"/>
+            <line x1="235" y1="20" x2="235" y2="210" stroke="#38bdf8" stroke-width="1" stroke-dasharray="2,2"/>
+            <text x="242" y="145" fill="#38bdf8" font-size="11" font-family="monospace" font-weight="700">M1: 436 MHz (1.37)</text>
+
+            <!-- Marcador Inicial 420 MHz e Final 460 MHz -->
+            <text x="40" y="218" fill="#8b949e" font-size="9" font-family="monospace">420.0 MHz</text>
+            <text x="235" y="218" fill="#38bdf8" font-size="9" font-family="monospace" text-anchor="middle">436.0 MHz</text>
+            <text x="500" y="218" fill="#8b949e" font-size="9" font-family="monospace" text-anchor="end">460.0 MHz</text>
+          </svg>
+        </div>
+
+        <!-- Smith Chart & Marker Panel -->
+        <div class="vna-smith-chart">
+          <!-- Painel do Marker 1 (Cravado na Tela do VNAmate) -->
+          <div class="marker-panel" style="width:100%">
+            <div style="display:flex;justify-content:space-between">
+              <b>Marker 1</b>
+              <span class="marker-highlight">Auto Center</span>
+            </div>
+            <div>Freq: <b>436.000 MHz</b></div>
+            <div>Z: <b>43.9 Ω + 13.6 j</b> (|Z|: 46.0 Ω)</div>
+            <div>Return Loss: <b style="color:var(--green)">16.1 dB</b></div>
+            <div>Mismatch: <b>0.1 dB</b></div>
+            <div>SWR: <span style="font-size:1.15rem" class="marker-highlight">1.37</span></div>
+            <div class="swr-meter-bar">
+              <div class="swr-meter-fill"></div>
+            </div>
+          </div>
+
+          <!-- Carta de Smith Representativa em Alta Definição -->
+          <svg viewBox="0 0 160 160" width="140" height="140">
+            <circle cx="80" cy="80" r="70" fill="none" stroke="#21262d" stroke-width="1.5"/>
+            <line x1="10" y1="80" x2="150" y2="80" stroke="#21262d" stroke-width="1.5"/>
+            <!-- Círculo de R = 1.0 (50 ohms) -->
+            <circle cx="105" cy="80" r="35" fill="none" stroke="#3b4252" stroke-width="1.5"/>
+            <circle cx="120" cy="80" r="20" fill="none" stroke="#21262d" stroke-width="1"/>
+            <!-- Curvas de reatância indutiva/capacitiva -->
+            <path d="M10 80 Q70 30 115 45" fill="none" stroke="#21262d" stroke-width="1"/>
+            <path d="M10 80 Q70 130 115 115" fill="none" stroke="#21262d" stroke-width="1"/>
+            <!-- Ponto do Marker na Carta de Smith (Quase perfeitamente centrado em 50 ohms) -->
+            <circle cx="100" cy="74" r="4.5" fill="#38bdf8" stroke="#fff" stroke-width="1.5"/>
+            <circle cx="100" cy="74" r="9" fill="none" stroke="#38bdf8" opacity="0.6"/>
+          </svg>
+          <span style="font-size:.78rem;color:#8b949e;margin-top:.4rem" class="mono">Centro da Carta: 50.0 Ω</span>
+        </div>
+      </div>
+
+      <!-- Tabela de Varredura Fiel ao VNAmate -->
+      <div class="vna-table-wrap">
+        <table class="vna-table">
+          <thead>
+            <tr>
+              <th>Frequência</th>
+              <th>SWR</th>
+              <th>Return Loss</th>
+              <th>Mismatch</th>
+              <th>Impedância Z</th>
+              <th>|Z|</th>
+              <th>Fase S11</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>430.400 MHz</td>
+              <td>1.47</td>
+              <td>14.5 dB</td>
+              <td>0.2 dB</td>
+              <td>44.8 Ω +17.4 j</td>
+              <td>48.0 Ω</td>
+              <td>96.1°</td>
+            </tr>
+            <tr>
+              <td>432.000 MHz</td>
+              <td>1.43</td>
+              <td>15.0 dB</td>
+              <td>0.1 dB</td>
+              <td>44.9 Ω +16.2 j</td>
+              <td>47.7 Ω</td>
+              <td>97.8°</td>
+            </tr>
+            <tr>
+              <td>434.000 MHz</td>
+              <td>1.40</td>
+              <td>15.6 dB</td>
+              <td>0.1 dB</td>
+              <td>44.6 Ω +14.9 j</td>
+              <td>47.0 Ω</td>
+              <td>101.2°</td>
+            </tr>
+            <tr>
+              <td>435.200 MHz</td>
+              <td>1.38</td>
+              <td>15.9 dB</td>
+              <td>0.1 dB</td>
+              <td>44.3 Ω +14.1 j</td>
+              <td>46.4 Ω</td>
+              <td>103.7°</td>
+            </tr>
+            <!-- Linha Ativa Destacada do Centro de Ressonância -->
+            <tr class="active">
+              <td>▶ 436.000 MHz</td>
+              <td>1.37</td>
+              <td>16.1 dB</td>
+              <td>0.1 dB</td>
+              <td>43.9 Ω +13.6 j</td>
+              <td>46.0 Ω</td>
+              <td>105.9°</td>
+            </tr>
+            <tr>
+              <td>437.200 MHz</td>
+              <td>1.38</td>
+              <td>16.3 dB</td>
+              <td>0.1 dB</td>
+              <td>43.4 Ω +12.9 j</td>
+              <td>45.3 Ω</td>
+              <td>109.2°</td>
+            </tr>
+            <tr>
+              <td>438.400 MHz</td>
+              <td>1.36</td>
+              <td>16.3 dB</td>
+              <td>0.1 dB</td>
+              <td>42.7 Ω +12.4 j</td>
+              <td>44.5 Ω</td>
+              <td>112.6°</td>
+            </tr>
+            <tr>
+              <td>440.000 MHz</td>
+              <td>1.37</td>
+              <td>16.1 dB</td>
+              <td>0.1 dB</td>
+              <td>41.8 Ω +11.8 j</td>
+              <td>43.5 Ω</td>
+              <td>117.3°</td>
+            </tr>
+            <tr>
+              <td>442.000 MHz</td>
+              <td>1.39</td>
+              <td>15.7 dB</td>
+              <td>0.1 dB</td>
+              <td>40.5 Ω +11.5 j</td>
+              <td>42.1 Ω</td>
+              <td>122.4°</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cards de Métricas em Destaque -->
+  <div class="stats">
+    <div class="stat-card">
+      <b>1.37</b>
+      <span>ROE central em 436 MHz, mantendo 1.36 a 1.46 em toda a faixa de 430 a 440 MHz</span>
+    </div>
+    <div class="stat-card">
+      <b>0,1 dB</b>
+      <span>Perda por descasamento desprezível: 98% da potência do HT convertida em onda útil</span>
+    </div>
+    <div class="stat-card">
+      <b>16,1 dB</b>
+      <span>Perda de retorno (Return Loss) assegurada, garantindo proteção ao estágio final do transceptor</span>
+    </div>
+    <div class="stat-card">
+      <b>44 Ω</b>
+      <span>Resistência de radiação pura próxima aos 50 Ω com baixa reatância indutiva (+13.6j)</span>
+    </div>
+  </div>
+</div></section>
+
+<!-- Cenários de Aplicação e Especificações -->
+<section><div class="wrap cols">
+  <div>
+    <div class="section-head" style="margin-bottom:1.5rem">
+      <span class="section-tag">Aplicações Reais</span>
+      <h2>Pronta para o uso severo</h2>
+    </div>
+    <ul class="use">
+      <li><b>Expedições e Trilhas:</b> Onde o transceptor portátil é a única linha de comunicação de segurança com a base.</li>
+      <li><b>Off-road, UTVs e Dunas:</b> Suporta flexão contínua em movimento e chicoteamento em galhos e vegetação sem romper o condutor interno.</li>
+      <li><b>Operações Táticas e Mídia:</b> Rendimento otimizado na faixa UHF com conexão firme SMA fêmea sem folgas mecânicas.</li>
+    </ul>
+  </div>
+
+  <div>
+    <div class="section-head" style="margin-bottom:1.5rem">
+      <span class="section-tag">Ficha Técnica</span>
+      <h2>Especificações</h2>
+    </div>
+    <table class="spec-table">
+      <tr>
+        <th>Tipo de Antena</th>
+        <td>Monopolo Coaxial Tático UHF</td>
+      </tr>
+      <tr>
+        <th>Frequência Central</th>
+        <td>435 MHz (calibrada de 430 a 440 MHz)</td>
+      </tr>
+      <tr>
+        <th>ROE / SWR Médio</th>
+        <td>1.37 a 1.46 (1.37 em 436 MHz)</td>
+      </tr>
+      <tr>
+        <th>Impedância Nominal</th>
+        <td>50 Ω (R pura ~44 Ω, +j13.6 Ω)</td>
+      </tr>
+      <tr>
+        <th>Perda por Descasamento</th>
+        <td>0,1 dB</td>
+      </tr>
+      <tr>
+        <th>Comprimento Físico</th>
+        <td>~265 mm a 270 mm</td>
+      </tr>
+      <tr>
+        <th>Diâmetro da Luva</th>
+        <td>11 mm</td>
+      </tr>
+      <tr>
+        <th>Peso Total</th>
+        <td>~58 g</td>
+      </tr>
+      <tr>
+        <th>Conector Base</th>
+        <td>SMA Fêmea (encaixe direto UV-5R/UV-21 Pro)</td>
+      </tr>
+      <tr>
+        <th>Construção</th>
+        <td>RG-213 militar 7 vias, luva 160 mm, termorretrátil 3:1</td>
+      </tr>
+      <tr>
+        <th>Garantia</th>
+        <td>90 dias contra defeitos de bancada</td>
+      </tr>
+    </table>
+  </div>
+</div></section>
+
+<!-- Seção de Compra / Encomenda -->
+<section id="comprar"><div class="wrap">
+  <div class="buy-card">
+    <div class="section-head" style="margin-bottom:1.25rem">
+      <span class="section-tag">Produção de Bancada</span>
+      <h2>Garanta a sua LENDA-435</h2>
+    </div>
+    <p style="max-width:54ch;color:var(--muted);font-size:1.1rem;margin-bottom:2rem">
+      Cada antena é confeccionada e equalizada individualmente no analisador vetorial de rede antes do envio. O conector padrão é <strong>SMA Fêmea</strong>, proporcionando encaixe rosqueado direto para Baofeng UV-5R, UV-21 Pro, Quansheng e transceptores portáteis compatíveis, dispensando adaptadores que geram perdas.
+    </p>
+
+    <a class="btn" href="https://wa.me/5598900000000?text=Ol%C3%A1%2C%20gostaria%20de%20encomendar%20uma%20antena%20LENDA-435" target="_blank" rel="noopener">
+      Pedir Antena via WhatsApp
+    </a>
+
+    <div class="legal-box">
+      <p class="legal">
+        <strong>Termo de Garantia:</strong> A antena LENDA-435 possui garantia de 90 dias contra defeitos ocultos de fabricação, abrangendo falhas na conectorização interna, solda fria ou degradação espontânea do isolamento comprovados na inspeção de bancada. A garantia perde o efeito imediato em caso de trauma mecânico por alavanca no conector SMA, quebra decorrente de queda do rádio, cortes intencionais na capa ou esmagamento estrutural da haste.
+      </p>
+      <p class="legal">
+        <strong>Aviso Regulatório:</strong> A faixa de 430 a 440 MHz no território brasileiro é atribuída ao serviço de radioamadorismo. A operação de transmissão exige licença de estação e observância estrita das normas expedidas pela Anatel.
+      </p>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    LENDA-435 · Monopolo Coaxial Tático UHF · Tested &amp; Tuned
+  </div>
+</footer>
+
+</body>
+</html>
