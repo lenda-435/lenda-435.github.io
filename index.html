@@ -80,6 +80,10 @@ a{color:inherit}
   letter-spacing:.02em;
 }
 
+.brand-logo{display:block;height:34px;width:auto;max-width:100%}
+.brand{min-width:0}
+@media(max-width:540px){.brand-logo{height:26px}}
+
 /* Buttons */
 .btn{
   display:inline-flex;
@@ -324,7 +328,7 @@ h2{font-size:clamp(2.4rem,5.5vw,3.8rem);margin-bottom:.5rem}
   overflow:hidden;
 }
 .swr-meter-fill{
-  width:37%;
+  width:38%;
   height:100%;
   background:linear-gradient(90deg,#10b981,#34d399);
 }
@@ -484,8 +488,7 @@ footer{
 <!-- Header Principal -->
 <header class="top">
   <a href="https://lenda-435.github.io" class="brand">
-    <span class="brand-badge">UHF 50Ω</span>
-    <span class="brand-name">LENDA-435</span>
+    <img class="brand-logo" src="img/id-lenda.svg" alt="LENDA-435" width="925" height="143">
   </a>
   <a class="btn ghost" href="#comprar">Pedir Antena</a>
 </header>
@@ -574,7 +577,7 @@ footer{
     <div class="specs-pills">
       <div class="pill">
         <span class="label">Comprimento</span>
-        <span class="val">~265 mm</span>
+        <span class="val">~27 cm</span>
       </div>
       <div class="pill">
         <span class="label">Peso Real</span>
@@ -669,16 +672,16 @@ footer{
       </g>
 
       <g fill="#f1efec" font-family="'Archivo', sans-serif" font-size="13">
-        <text x="175" y="42" font-weight="700">Ponteira Vinil (8 mm)</text>
+        <text x="175" y="42" font-weight="700">Ponteira Vinil</text>
         <text x="175" y="56" fill="#9da5b4" font-size="11">Vedada com gota interna de PU40</text>
 
-        <text x="175" y="142" font-weight="700">Elemento Ativo (~112 mm)</text>
+        <text x="175" y="142" font-weight="700">Elemento Ativo</text>
         <text x="175" y="156" fill="#9da5b4" font-size="11">Alma de cobre 7 vias + polietileno</text>
 
         <text x="175" y="233" font-weight="700" fill="#ff4d00">Transição Feedpoint</text>
         <text x="175" y="247" fill="#9da5b4" font-size="11">Sem degrau (área limpa)</text>
 
-        <text x="175" y="337" font-weight="700">Malha Coaxial (160 mm)</text>
+        <text x="175" y="337" font-weight="700">Malha Coaxial</text>
         <text x="175" y="351" fill="#9da5b4" font-size="11">Desacoplamento direto</text>
 
         <text x="175" y="462" font-weight="700">Base Livre</text>
@@ -703,11 +706,11 @@ footer{
 
     <div class="layer-item">
       <h3>Desacoplamento Coaxial Sem Inversão</h3>
-      <p>A seção inferior de 160 mm utiliza a malha pesada de cobre estendida diretamente para a base, criando um desacoplamento de corrente eficiente que estabiliza o lóbulo de irradiação e elimina variações de ROE provocadas pela mão do operador.</p>
+      <p>A seção inferior utiliza a malha pesada de cobre estendida diretamente para a base, criando um desacoplamento de corrente eficiente que estabiliza o lóbulo de irradiação e elimina variações de ROE provocadas pela mão do operador.</p>
     </div>
 
     <div class="layer-item">
-      <h3>Termorretrátil 3:1 Vulcanizante e Estanqueidade</h3>
+      <h3>Termorretrátil Vulcanizante e Estanqueidade</h3>
       <p>A haste é blindada por tubulação termorretraível de parede dupla com adesivo interno ativado por calor. O selante PU40 fica restrito à cavidade interna da ponteira de vinil de 8 mm no topo, garantindo vedação contra chuva e maresia sem adicionar peso ou alterar a impedância no feedpoint.</p>
     </div>
   </div>
@@ -718,7 +721,7 @@ footer{
   <div class="section-head">
     <span class="section-tag">Comprovação Científica</span>
     <h2>Aferição em Analisador Vetorial de Rede</h2>
-    <p style="color:var(--muted);max-width:48ch;margin-top:.5rem">Nenhuma unidade sai da bancada sem o laudo de varredura no VNAmate. A curva real demonstra estabilidade plena de 430 a 440 MHz com ponto ótimo cravado em 435 MHz (média).</p>
+    <p style="color:var(--muted);max-width:48ch;margin-top:.5rem">Nenhuma unidade sai da bancada sem o laudo de varredura no VNAmate. A varredura mostra ROE abaixo de 1,5 em toda a faixa de 430 a 440 MHz, com 1,38 em 435 MHz.</p>
   </div>
 
   <div class="vna-container">
@@ -766,20 +769,20 @@ footer{
             <text x="32" y="213" fill="#8b949e" font-size="10" text-anchor="end" font-family="monospace">1.0</text>
 
             <!-- Zona Destacada em Verde da Faixa de Amador/UHF (430 a 440 MHz) -->
-            <rect x="155" y="20" width="130" height="190" fill="#10b981" fill-opacity="0.12"/>
-            <text x="220" y="32" fill="#10b981" font-size="9" text-anchor="middle" font-family="monospace">FAIXA 430–440 MHz</text>
+            <rect x="155" y="20" width="115" height="190" fill="#10b981" fill-opacity="0.12"/>
+            <text x="212.5" y="32" fill="#10b981" font-size="9" text-anchor="middle" font-family="monospace">FAIXA 430–440 MHz</text>
 
             <!-- Curva Real de ROE / SWR (Vermelha) -->
             <path d="M40 70 Q90 100 155 130 T235 152 Q330 155 420 100 T500 50" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
 
             <!-- Ponto Marker Central em 435.000 MHz -->
-            <circle cx="235" cy="152" r="5" fill="#38bdf8" stroke="#fff" stroke-width="1.5"/>
-            <line x1="235" y1="20" x2="235" y2="210" stroke="#38bdf8" stroke-width="1" stroke-dasharray="2,2"/>
-            <text x="242" y="145" fill="#38bdf8" font-size="11" font-family="monospace" font-weight="700">M1: 435 MHz (1.37)</text>
+            <circle cx="214.8" cy="152.3" r="5" fill="#38bdf8" stroke="#fff" stroke-width="1.5"/>
+            <line x1="214.8" y1="20" x2="214.8" y2="210" stroke="#38bdf8" stroke-width="1" stroke-dasharray="2,2"/>
+            <text x="222.8" y="144.3" fill="#38bdf8" font-size="11" font-family="monospace" font-weight="700">435,2 MHz (1.38)</text>
 
             <!-- Marcador Inicial 420 MHz e Final 460 MHz -->
             <text x="40" y="218" fill="#8b949e" font-size="9" font-family="monospace">420.0 MHz</text>
-            <text x="235" y="218" fill="#38bdf8" font-size="9" font-family="monospace" text-anchor="middle">435.0 MHz</text>
+            <text x="214.8" y="218" fill="#38bdf8" font-size="9" font-family="monospace" text-anchor="middle">435.2 MHz</text>
             <text x="500" y="218" fill="#8b949e" font-size="9" font-family="monospace" text-anchor="end">460.0 MHz</text>
           </svg>
         </div>
@@ -789,14 +792,14 @@ footer{
           <!-- Painel do Marker 1 (Cravado na Tela do VNAmate) -->
           <div class="marker-panel" style="width:100%">
             <div style="display:flex;justify-content:space-between">
-              <b>Marker 1</b>
-              <span class="marker-highlight">Auto Center</span>
+              <b>Referência</b>
+              <span class="marker-highlight">435 MHz</span>
             </div>
-            <div>Freq: <b>435.000 MHz</b></div>
-            <div>Z: <b>43.9 Ω + 13.6 j</b> (|Z|: 46.0 Ω)</div>
+            <div>Freq: <b>435.200 MHz</b></div>
+            <div>Z: <b>44.3 Ω + 14.1 j</b> (|Z|: 46.4 Ω)</div>
             <div>Return Loss: <b style="color:var(--green)">15.9 dB</b></div>
             <div>Mismatch: <b>0.1 dB</b></div>
-            <div>SWR: <span style="font-size:1.15rem" class="marker-highlight">1.37</span></div>
+            <div>SWR: <span style="font-size:1.15rem" class="marker-highlight">1.38</span></div>
             <div class="swr-meter-bar">
               <div class="swr-meter-fill"></div>
             </div>
@@ -835,99 +838,29 @@ footer{
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>430.400 MHz</td>
-              <td>1.47</td>
-              <td>14.5 dB</td>
-              <td>0.2 dB</td>
-              <td>44.8 Ω +17.4 j</td>
-              <td>48.0 Ω</td>
-              <td>96.1°</td>
-            </tr>
-            <tr>
-              <td>432.000 MHz</td>
-              <td>1.43</td>
-              <td>15.0 dB</td>
-              <td>0.1 dB</td>
-              <td>44.9 Ω +16.2 j</td>
-              <td>47.7 Ω</td>
-              <td>97.8°</td>
-            </tr>
-            <tr>
-              <td>434.000 MHz</td>
-              <td>1.40</td>
-              <td>15.6 dB</td>
-              <td>0.1 dB</td>
-              <td>44.6 Ω +14.9 j</td>
-              <td>47.0 Ω</td>
-              <td>101.2°</td>
-            </tr>
-            <tr class="active">
-              <td>▶ 435.200 MHz</td>
-              <td>1.37</td>
-              <td>15.9 dB</td>
-              <td>0.1 dB</td>
-              <td>44.3 Ω +13.6 j</td>
-              <td>46.4 Ω</td>
-              <td>103.7°</td>
-            </tr>
-            <!-- Linha Ativa Destacada do Centro de Ressonância -->
-            <tr>
-              <td>436.000 MHz</td>
-              <td>1.37</td>
-              <td>16.1 dB</td>
-              <td>0.1 dB</td>
-              <td>43.9 Ω +14.1 j</td>
-              <td>46.0 Ω</td>
-              <td>105.9°</td>
-            </tr>
-            <tr>
-              <td>437.200 MHz</td>
-              <td>1.38</td>
-              <td>16.3 dB</td>
-              <td>0.1 dB</td>
-              <td>43.4 Ω +12.9 j</td>
-              <td>45.3 Ω</td>
-              <td>109.2°</td>
-            </tr>
-            <tr>
-              <td>438.400 MHz</td>
-              <td>1.36</td>
-              <td>16.3 dB</td>
-              <td>0.1 dB</td>
-              <td>42.7 Ω +12.4 j</td>
-              <td>44.5 Ω</td>
-              <td>112.6°</td>
-            </tr>
-            <tr>
-              <td>440.000 MHz</td>
-              <td>1.37</td>
-              <td>16.1 dB</td>
-              <td>0.1 dB</td>
-              <td>41.8 Ω +11.8 j</td>
-              <td>43.5 Ω</td>
-              <td>117.3°</td>
-            </tr>
-            <tr>
-              <td>442.000 MHz</td>
-              <td>1.39</td>
-              <td>15.7 dB</td>
-              <td>0.1 dB</td>
-              <td>40.5 Ω +11.5 j</td>
-              <td>42.1 Ω</td>
-              <td>122.4°</td>
-            </tr>
-          </tbody>
+<tr><td>430.400 MHz</td><td>1.47</td><td>14.5 dB</td><td>0.2 dB</td><td>44.8 Ω +17.4 j</td><td>48.1 Ω</td><td>96.1°</td></tr>
+<tr><td>432.000 MHz</td><td>1.43</td><td>15.0 dB</td><td>0.1 dB</td><td>44.9 Ω +16.2 j</td><td>47.7 Ω</td><td>97.8°</td></tr>
+<tr><td>433.600 MHz</td><td>1.40</td><td>15.5 dB</td><td>0.1 dB</td><td>44.7 Ω +15.2 j</td><td>47.2 Ω</td><td>100.3°</td></tr>
+<tr><td>434.400 MHz</td><td>1.39</td><td>15.7 dB</td><td>0.1 dB</td><td>44.5 Ω +14.6 j</td><td>46.8 Ω</td><td>101.9°</td></tr>
+<tr><td>434.800 MHz</td><td>1.39</td><td>15.8 dB</td><td>0.1 dB</td><td>44.4 Ω +14.3 j</td><td>46.6 Ω</td><td>102.8°</td></tr>
+<tr class="active"><td>▶ 435.200 MHz</td><td>1.38</td><td>15.9 dB</td><td>0.1 dB</td><td>44.3 Ω +14.1 j</td><td>46.4 Ω</td><td>103.7°</td></tr>
+<tr><td>435.600 MHz</td><td>1.37</td><td>16.0 dB</td><td>0.1 dB</td><td>44.1 Ω +13.8 j</td><td>46.2 Ω</td><td>104.8°</td></tr>
+<tr><td>436.000 MHz</td><td>1.37</td><td>16.1 dB</td><td>0.1 dB</td><td>43.9 Ω +13.6 j</td><td>46.0 Ω</td><td>105.9°</td></tr>
+<tr><td>436.800 MHz</td><td>1.37</td><td>16.2 dB</td><td>0.1 dB</td><td>43.6 Ω +13.1 j</td><td>45.5 Ω</td><td>108.0°</td></tr>
+<tr><td>438.000 MHz</td><td>1.36</td><td>16.3 dB</td><td>0.1 dB</td><td>43.0 Ω +12.6 j</td><td>44.8 Ω</td><td>111.5°</td></tr>
+<tr><td>440.000 MHz</td><td>1.37</td><td>16.2 dB</td><td>0.1 dB</td><td>41.8 Ω +11.8 j</td><td>43.5 Ω</td><td>117.3°</td></tr>
+</tbody>
         </table>
       </div>
+      <p class="mono" style="font-size:.78rem;color:#8b949e;margin:.75rem 0 0">Unidade de exemplo, varredura de 420 a 460 MHz com passo de 0,4 MHz. 435,2 MHz é o ponto medido mais próximo de 435 MHz.</p>
     </div>
   </div>
 
   <!-- Cards de Métricas em Destaque -->
   <div class="stats">
     <div class="stat-card">
-      <b>1.37</b>
-      <span>ROE central em 435 MHz, mantendo 1.36 a 1.46 em toda a faixa de 430 a 440 MHz</span>
+      <b>1,38</b>
+      <span>ROE em 435 MHz (ponto medido: 435,2 MHz), entre 1,36 e 1,47 nos pontos medidos de 430,4 a 440 MHz</span>
     </div>
     <div class="stat-card">
       <b>0,1 dB</b>
@@ -939,7 +872,7 @@ footer{
     </div>
     <div class="stat-card">
       <b>44 Ω</b>
-      <span>Resistência de radiação pura próxima aos 50 Ω com baixa reatância indutiva (+13.6j)</span>
+      <span>Resistência de radiação pura próxima aos 50 Ω com baixa reatância indutiva (+14.1j)</span>
     </div>
   </div>
 </div></section>
@@ -974,11 +907,11 @@ footer{
       </tr>
       <tr>
         <th>ROE / SWR Médio</th>
-        <td>1.37 a 1.46 (1.37 em 435 MHz)</td>
+        <td>1,36 a 1,47 (1,38 em 435 MHz)</td>
       </tr>
       <tr>
         <th>Impedância Nominal</th>
-        <td>50 Ω (R pura ~44 Ω, +j13.6 Ω)</td>
+        <td>50 Ω (R pura ~44 Ω, +j14.1 Ω)</td>
       </tr>
       <tr>
         <th>Perda por Descasamento</th>
@@ -1046,7 +979,7 @@ footer{
   <div class="wrap">
     LENDA-435 · Monopolo Coaxial Tático UHF · Tested &amp; Tuned @ 2026 AHU
   </div>
-  <p style="font-size: 0.1rem; color: #090a0c; max-width: 80ch; margin: 0 auto 1.5rem auto; text-align: center;">
+  <p style="font-size: 0.1rem; color: #efefed; max-width: 80ch; margin: 0 auto 1.5rem auto; text-align: center;">
   Desenvolvida no Maranhão e forjada sob as condições mais extremas do off-road nacional. Eficiência de comunicação comprovada em campo nas expedições Legendários, eventos TOP, uso tático em Track, Rota dos Lençóis, Rota Vale das Mesas, Rota do Aço e Rota das Carúbas.
 </p>
 </footer>
